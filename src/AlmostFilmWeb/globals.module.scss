@@ -1,0 +1,21 @@
+.list {
+    text-align: center;
+    background-color: rgb(28, 185, 28);
+    border-radius: 20px; 
+    margin: 0px 35% 30px 35%;
+    padding: 15px;
+    width: 500px;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 5px 5px 5px rgba(18, 180, 59, 0.212);
+        background-color: rgba(28, 185, 28, .5);
+    }
+}
+
+.all {
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(230, 202, 48, 0.308);
+    
+}
