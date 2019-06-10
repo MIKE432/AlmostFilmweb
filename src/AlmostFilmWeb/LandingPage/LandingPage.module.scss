@@ -1,5 +1,5 @@
 .list {
-    
+    display: grid;
     text-align: center;
     width: 200px;
     align-items: center;
@@ -10,11 +10,12 @@
 
 .popular {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
 .LandingPage {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: rgba(230, 202, 48, 0.308);
 }

@@ -1,10 +1,13 @@
 import React from 'react';
-import Styles from './LandingPage.module.scss'
-import { NavLink } from 'react-router-dom';
-import NavBar from '../NavBar/NavBar';
+import Styles from './LandingPage.module.scss';
+import PopularMovieDescription from './PopularMovieDescription/PopularMovieDescription.js'
+import { request } from './request';
 
 
-const urlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=612ebf63e580831559365d1bc93af503'
+
+
+const urlPopular = 'movie/popular'
+const urlMostPopular = 'https://api.themoviedb.org/3/search/movie?api_key=612ebf63e580831559365d1bc93af503&query=Avengers+Endgame'
 
 const Description = (props) => { return(
     <div className={Styles.list}>
@@ -13,29 +16,39 @@ const Description = (props) => { return(
   )
 }
 
-
 class LandingPage extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             popularMovies: [],
+            mostPopularMovie: []
         }
     }
 
     componentDidMount() {
-        fetch(urlPopular)
-        .then(response => response.json())
-        .then(data => this.setState({popularMovies: data.results}))
+        request(urlPopular)
+            .then(data => this.setState({popularMovies: data.results}))
+        
+            fetch(urlMostPopular)
+            .then(response => response.json())
+            .then(data => this.setState({mostPopularMovie: data.results}))
     }
+
+
 
     render() {
         return(
-            <div className = {Styles.LandingPage}>
-                
+            <div className = {Styles.LandingPage}> 
+            {
+                this.state.mostPopularMovie.map((item) => (
+                    <PopularMovieDescription title = {item.title} description = {item.overview} /> 
+                ))
+            }
+            
+
+                <h2>Popularne: </h2>
                 <div className = {Styles.popular}>
-                    <h2>Popularne: </h2>
                     {
                         this.state.popularMovies.map((item) => (
                             <Description title = {item.title} /> 

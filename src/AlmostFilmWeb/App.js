@@ -32,7 +32,7 @@ class Filmweb extends React.Component {
   }
 
   handleClick() {
-    console.log('Clicked')
+    console.log("Clicked")
   }
   
 
