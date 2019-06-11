@@ -17,8 +17,9 @@ const AlmostFilmWeb = (props) =>
         <Route exact path = "/Search" component = {Search} />
         <Route path = "/movies/:id" component = {Details} />
       </Switch>
+      <Footer />
   </Router>
-  <Footer />
+ 
 </div>
 
 export default AlmostFilmWeb;

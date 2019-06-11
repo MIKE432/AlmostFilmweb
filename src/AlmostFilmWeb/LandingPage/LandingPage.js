@@ -1,7 +1,6 @@
 import React from 'react';
 import Styles from './LandingPage.module.scss';
-import PopularMovieDescription from './PopularMovieDescription/PopularMovieDescription.js'
-import { request } from './request';
+import Wallpaper from '../../Assets/LandingPagePhoto.jpg'
 
 
 
@@ -29,7 +28,7 @@ class LandingPage extends React.Component {
 
     render() {
         return(
-            <div className = {Styles.LandingPage}> 
+            <div className = {Styles.LandingPage} > 
           
             </div>
         )

@@ -17,5 +17,7 @@
 .LandingPage {
     display: flex;
     flex-direction: column;
-    background-color: rgba(230, 202, 48, 0.308);
+
+    background-image: url('../../Assets/LandingPagePhoto.jpg');
+    height: 100vh;
 }
