@@ -7,20 +7,31 @@ class Details extends React.Component {
         super(props);
         
         this.state = {
-            movie: {}
+            movie: {},
+            isLoading: false,
         }
     }
 
     componentDidMount() {
         const { match } = this.props;
 
+        this.setState({isLoading: true})
+
         fetch(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=612ebf63e580831559365d1bc93af503`)
         .then(response => response.json())
-        .then(data => this.setState({movie: data}))
+        .then(data => this.setState({movie: data, isLoading: false}))
     }
 
     render() {
-        const { movie } = this.state;
+        const { movie, isLoading } = this.state;
+
+        if(isLoading) {
+            return(
+                <p className = {Styles.loading}>Loading...</p>
+            )
+        
+        }
+            
 
         return (
             <div>
