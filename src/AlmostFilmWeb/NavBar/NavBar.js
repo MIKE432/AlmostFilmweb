@@ -12,15 +12,14 @@ class NavBar extends React.Component {
         }
     }
 
-
     render() {
         return(
             <div className={Styles.NavBar}>
 
                 <NavLink to = "/" className = {Styles.Logo} >Prawie FilmWeb</NavLink>
                 <NavLink to ="/Nowosci" className = {Styles.Buttons} >Nowości</NavLink>
-                <div className = {Styles.Buttons}>Baza Filmów</div>
-                <NavLink to = "/Search" className = {Styles.Buttons}>Search</NavLink>
+                <NavLink className = {Styles.Buttons}>Baza Filmów</NavLink>
+                <NavLink className = {Styles.Buttons}>Forum</NavLink>
 
             </div>
         )

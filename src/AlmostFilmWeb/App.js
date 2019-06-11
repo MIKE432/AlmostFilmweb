@@ -1,17 +1,7 @@
 import React from 'react';
 import Styles from './globals.module.scss';
 import NavBar from './NavBar/NavBar';
-
-console.log(Styles)
-
-const Description = (props) => { return(
-    <div className={Styles.list} onClick = {props.onClick}>
-      <h1>{props.title}</h1>
-      <h2>Popularność: {props.popularity}</h2>
-      <h3>ocena: {props.vote_average}</h3>   
-    </div>
-  )
-}
+import { Description } from '../AlmostFilmWeb/Description/Description.js';
 
 const url = 'https://api.themoviedb.org/3/movie/popular?api_key=612ebf63e580831559365d1bc93af503'
 
@@ -41,7 +31,7 @@ class Filmweb extends React.Component {
       <div className = {Styles.all}>
           {
             this.state.Library.map((item) => (
-              <Description onClick = {this.handleClick} popularity={item.popularity} title={item.title} vote_average={item.vote_average} />
+              <Description onClick = {this.handleClick} popularity={item.popularity} title={item.title} vote_average={item.vote_average} poster_path = {item.poster_path} />
             ))
             
           }

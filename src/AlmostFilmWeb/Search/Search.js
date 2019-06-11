@@ -1,15 +1,9 @@
 import React from 'react';
 import Styles from './Search.module.scss'
 import { request } from '../LandingPage/request.js'
+import { Description } from '../Description/Description.js'
 
-const Description = (props) => { return(
-    <div className={Styles.list} onClick = {props.onClick}>
-      <h1>{props.title}</h1>
-      <h2>Popularność: {props.popularity}</h2>
-      <h3>ocena: {props.vote_average}</h3>   
-    </div>
-  )
-}
+
 
 class Search extends React.Component {
 
@@ -21,8 +15,6 @@ class Search extends React.Component {
             isLoading: false,
         }
     }
-
-    
 
     handleSubmit = (event) => {
         event.preventDefault()
@@ -41,7 +33,13 @@ class Search extends React.Component {
                 <input onChange = {this.onChangeName} className = {Styles.Input} />
                 {
                     this.state.popular.map((item) => (
-                    <Description onClick = {this.handleClick} popularity={item.popularity} title={item.title} vote_average={item.vote_average} />
+                    <Description
+                        onClick = {this.handleClick}
+                        popularity={item.popularity}
+                        title={item.title}
+                        vote_average={item.vote_average}
+                        poster_path = {item.poster_path}
+                    />
                     ))
                 }
             </div>
