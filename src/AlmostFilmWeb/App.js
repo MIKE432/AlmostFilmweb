@@ -31,7 +31,14 @@ class Filmweb extends React.Component {
       <div className = {Styles.all}>
           {
             this.state.Library.map((item) => (
-              <Description onClick = {this.handleClick} popularity={item.popularity} title={item.title} vote_average={item.vote_average} poster_path = {item.poster_path} />
+              <Description onClick = {this.handleClick}
+                popularity={item.popularity}
+                title={item.title} 
+                vote_average={item.vote_average}
+                poster_path = {item.poster_path}
+                id = {item.id}
+                />
+                
             ))
             
           }
