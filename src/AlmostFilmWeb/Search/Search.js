@@ -2,6 +2,7 @@ import React from 'react';
 import Styles from './Search.module.scss'
 import { request } from '../LandingPage/request.js'
 import { Description } from '../Description/Description.js'
+import { LoadingComponent } from '../../Assets/LoadingComponent/LoadingComponent'
 
 
 
@@ -28,6 +29,15 @@ class Search extends React.Component {
     }
 
     render() {
+        const {isLoading} = this.setState;
+
+        if(isLoading) {
+            return (
+                <LoadingComponent />
+            )
+        }
+
+
         return(
             <div className = {Styles.SearchComponent} >
                 <input onChange = {this.onChangeName} className = {Styles.Input} />

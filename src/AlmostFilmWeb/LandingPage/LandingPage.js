@@ -21,18 +21,8 @@ class LandingPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            popularMovies: [],
-            mostPopularMovie: []
-        }
-    }
 
-    componentDidMount() {
-        request(urlPopular)
-            .then(data => this.setState({popularMovies: data.results}))
-        
-            fetch(urlMostPopular)
-            .then(response => response.json())
-            .then(data => this.setState({mostPopularMovie: data.results}))
+        }
     }
 
 
@@ -40,21 +30,7 @@ class LandingPage extends React.Component {
     render() {
         return(
             <div className = {Styles.LandingPage}> 
-            {
-                this.state.mostPopularMovie.map((item) => (
-                    <PopularMovieDescription title = {item.title} description = {item.overview} /> 
-                ))
-            }
-            
-
-                <h2>Popularne: </h2>
-                <div className = {Styles.popular}>
-                    {
-                        this.state.popularMovies.map((item) => (
-                            <Description title = {item.title} /> 
-                        ))
-                    }
-                </div>
+          
             </div>
         )
     }

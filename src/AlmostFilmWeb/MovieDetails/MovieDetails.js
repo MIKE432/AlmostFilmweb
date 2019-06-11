@@ -1,6 +1,6 @@
 import React from 'react'
 import Styles from './MovieDetails.module.scss'
-
+import { LoadingComponent } from '../../Assets/LoadingComponent/LoadingComponent'
 
 class Details extends React.Component {
     constructor(props) {
@@ -27,9 +27,8 @@ class Details extends React.Component {
 
         if(isLoading) {
             return(
-                <p className = {Styles.loading}>Loading...</p>
+                <LoadingComponent />
             )
-        
         }
             
 

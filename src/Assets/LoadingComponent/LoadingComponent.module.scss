@@ -1,0 +1,24 @@
+.LoadingComponent {
+    animation: loadingComponent infinite 1s linear;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+@keyframes loadingComponent {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
