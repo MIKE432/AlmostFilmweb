@@ -1,0 +1,40 @@
+.facebook {
+    width: 32px;
+    height: 32px;
+    background-image: url('../../../Assets/facebook.png');
+    margin: 50px 20px 20px 20px;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+        background-image: url('../../../Assets/facebookC.png');
+    }
+}
+
+.instagram {
+    width: 32px;
+    height: 32px;
+    background-image: url('../../../Assets/instagram.png');
+    margin: 20px;
+
+    &:hover {
+        cursor: pointer;
+        background-image: url('../../../Assets/instagramC.png');
+    }
+}
+
+.twitter {
+    width: 32px;
+    height: 32px;
+    background-image: url('../../../Assets/twitter.png');
+    margin: 20px;
+
+    &:hover {
+        cursor: pointer;
+        background-image: url('../../../Assets/twitterC.png');
+    }
+}
+
+.Container {
+    padding: 20px
+}

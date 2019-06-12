@@ -2,9 +2,6 @@ import React from 'react';
 import Styles from './LandingPage.module.scss';
 import Wallpaper from '../../Assets/LandingPagePhoto.jpg'
 
-
-
-
 const urlPopular = 'movie/popular'
 const urlMostPopular = 'https://api.themoviedb.org/3/search/movie?api_key=612ebf63e580831559365d1bc93af503&query=Avengers+Endgame'
 
@@ -24,12 +21,9 @@ class LandingPage extends React.Component {
         }
     }
 
-
-
     render() {
         return(
-            <div className = {Styles.LandingPage} > 
-          
+            <div className = {Styles.LandingPage} >           
             </div>
         )
     }

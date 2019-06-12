@@ -2,4 +2,26 @@
     height: 30vh;
     width: 100%;
     background-color: grey;
+    display: flex;
+    flex-direction: row;
+    
+    h1 {
+        margin: 0;
+        padding: 90px 1% 110px 25%;
+        font-size: 60px;
+        text-align: center;
+        justify-self: center;
+    }
 }
+
+.Container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0 50px 1%; 
+}
+
+.Section {
+    margin: 0 40% 0 40%;
+}
+
+

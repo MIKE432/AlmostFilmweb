@@ -25,7 +25,6 @@ class Filmweb extends React.Component {
     console.log("Clicked")
   }
   
-
   render() {
     return (
       <div className = {Styles.all}>
