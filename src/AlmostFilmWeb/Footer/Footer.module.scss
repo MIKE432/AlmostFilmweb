@@ -1,7 +1,9 @@
+@import '../../DefConsts.scss';
+
 .Footer {
     height: 30vh;
     width: 100%;
-    background-color: grey;
+    background-color: var(--main-color) ;
     display: flex;
     flex-direction: row;
     
