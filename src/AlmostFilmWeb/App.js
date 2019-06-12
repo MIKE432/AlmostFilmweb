@@ -1,6 +1,5 @@
 import React from 'react';
 import Styles from './globals.module.scss';
-import NavBar from './NavBar/NavBar';
 import { Description } from '../AlmostFilmWeb/Description/Description.js';
 
 const url = 'https://api.themoviedb.org/3/movie/popular?api_key=612ebf63e580831559365d1bc93af503'
