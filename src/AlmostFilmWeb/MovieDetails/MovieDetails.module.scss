@@ -1,16 +1,37 @@
-.Details {
-    padding: 20px;
-    min-height: 500px;
-    color: #fff;
-    background: #e7e7e7;
-    margin-bottom: 30px;
+@import '../../DefConsts.scss';
+
+
+.Poster {
+
+    height: 70%;
+    width:60%;
     background-size: cover;
     background-position: center;
     text-align: center;
+    justify-self: center;
 }
 
 .loading {
     text-align: center;
+}
+
+.Details {
+    height: 100vh;
+    width: 100vw;
+}
+
+.AllDetails {
+
+    padding: 93px;
+    display: flex;
+    background-color: var(--background-main-color);
+
+    p {
+        margin: 60px 10px 60px 0;
+        text-align: justify;
+        padding: 12% 0 0 0;
+        color: var(--text-color);
+    }
 }
 
 .title {
@@ -25,6 +46,4 @@
 
 .container {
     max-width: 600px;
-
-
   }

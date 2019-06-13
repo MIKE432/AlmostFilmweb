@@ -1,5 +1,6 @@
 @import '../../DefFonts.scss';
 @import '../../DefMedia.scss';
+@import '../../DefConsts.scss';
 
 .NavBar {
     display: flex;
@@ -10,7 +11,8 @@
    
     width:100%;
     font-size: 20px;
-    background-color: rgb(202, 202, 202);
+    background-color: var(--main-color);
+    color: var(--text-color);
     height: 30px;
     padding: 15px;
     text-align: center;
@@ -36,8 +38,7 @@
     text-decoration: none;
     @include font-body;
     font-size: 20px;
-    
-    color: rgba(0, 0, 255, 0.404);
+    color: var(--text-color);
 
     &:hover {
         cursor: pointer;
@@ -49,6 +50,7 @@
     display: flex;
     flex-direction: row;
     justify-content:space-between;
+
     padding: 0 10% 0 20%;
     width: 35%;
     height: 100%;
@@ -60,10 +62,10 @@
     height: 100%;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
 
-    &:hover {   
+    &:hover {
         cursor: pointer;
-        color:green;
+        @include font-on-hover
     }
 }

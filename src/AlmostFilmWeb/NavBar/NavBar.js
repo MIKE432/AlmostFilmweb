@@ -15,7 +15,6 @@ class NavBar extends React.Component {
     render() {
         return(
             <div className={Styles.NavBar}>
-                
                 <div className = {Styles.logo}>
                     <NavLink className = {Styles.Logo} to = "/"  >Prawie FilmWeb</NavLink>
                 </div>

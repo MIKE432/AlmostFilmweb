@@ -18,5 +18,16 @@
 
 .SearchComponent {
     text-align: center;
+    display: flex;
+    flex-direction: row;
+}
 
+.Details {
+    width: 70%;
+    height: 100vh;
+}
+
+.searchAndResults {
+    display: flex;
+    flex-direction: column;
 }

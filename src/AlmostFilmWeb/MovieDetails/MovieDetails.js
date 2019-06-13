@@ -33,14 +33,15 @@ class Details extends React.Component {
             
 
         return (
-            <div>
-                <div className = {Styles.Details} style={{backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.poster_path})`}}>
-                    <div className = {Styles.container}>
-                        <h1 className = {Styles.title}>{movie.title}</h1>
-                        <h1 className = {Styles.title}>Vote: {movie.vote_average}</h1>
+            <div className = {Styles.AllDetails}>
+                <div className = {Styles.Details}>
+                    <div className = {Styles.Poster} style={{backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.poster_path})`}}>
+                        <div className = {Styles.container}>
+                            <h1 className = {Styles.title}>{movie.title}</h1>
+                            <h1 className = {Styles.title}>Vote: {movie.vote_average}</h1>
+                        </div>
                     </div>
                 </div>
-                
                 <p>{movie.overview}</p>
             </div>
         )

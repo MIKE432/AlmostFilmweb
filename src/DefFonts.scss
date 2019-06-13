@@ -1,3 +1,5 @@
+@import './DefConsts.scss'; 
+
 $desktop: 1382px !default;
 $phone: 768px !default;
 
@@ -10,5 +12,5 @@ $phone: 768px !default;
 }
 
 @mixin font-on-hover {
-    color: green;
+    color: var(--hover-color);
 }
