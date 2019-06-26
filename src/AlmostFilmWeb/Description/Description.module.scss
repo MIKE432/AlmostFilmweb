@@ -3,17 +3,63 @@
     text-align: center;
     display: block;
     background-color: var(--content-background-color);
-    border-radius: 20px;
+    border-radius: 1px;
     margin: 0 auto;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 1px;
+    margin-top: 1px;
     padding: 15px;
-    width: 500px;
+    width: 90%;
+    height: 175px;
+    border: 1px solid transparent;
 
     color: var(--content-text-color);
 
     &:hover {
         cursor: pointer;
+        transition: .3s;
         background-color: var(--content-hover-color);
+        box-shadow: 4px 4px 3px black;
+        border: 1px solid black;
     }
+}
+
+.Container {
+    display: flex;
+    flex-direction: row;
+    height:100%;
+
+    .Photo {
+        min-width: 100px;
+        max-width: 200px;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        justify-self: center;
+        align-self: center;
+        margin:25px;
+        border-radius: 5px;
+    }
+
+    .Description {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width:80%;    
+    }
+
+            
+    .Vote {
+        text-align: center;
+
+        h1 {
+            margin: 44px 0 0 0;
+        }
+
+        h2 {
+            margin:0px;
+        }
+    }     
+
+
+
 }
