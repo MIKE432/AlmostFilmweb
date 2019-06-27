@@ -13,14 +13,6 @@ class Header extends React.Component {
         }
     }
 
-    componentDidMount() {
-        
-    }
-
-    componentWillUnmount() {
-
-    }
-
     render() {
         return(
             

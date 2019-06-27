@@ -1,7 +1,7 @@
 import React from 'react';
 import Styles from './LandingPage.module.scss';
 import Header from './Header/Header'
-
+import FilmList from './FilmList/FilmList'
 class LandingPage extends React.Component {
 
     constructor(props) {
@@ -14,9 +14,14 @@ class LandingPage extends React.Component {
 
     render() {
         return(
-            <div className = {Styles.LandingPage} > 
-                <Header />
+            <div>
+                <div className = {Styles.LandingPage} > 
+                    <Header />
+                
+                </div>
+                <FilmList />
             </div>
+            
         )
     }
 }

@@ -13,7 +13,7 @@ export const Description = (props) => { return(
             <h1>{props.vote_average}</h1>
             <h2>{props.popularity}</h2>
           </div>
-        </div> 
+        </div>
     </Link>
   )
 }
