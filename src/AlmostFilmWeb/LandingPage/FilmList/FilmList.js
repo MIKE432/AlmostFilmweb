@@ -17,6 +17,7 @@ class FilmList extends React.Component {
         this.state = {
             movies: [],
             whichPart: 1,
+            sections: 1,
         }
     }
 
@@ -35,17 +36,54 @@ class FilmList extends React.Component {
         }
     }
 
-    render() {
+    checkWhichSection = (number) => {
+        if(this.state.sections === number)
+            return "rgb(231, 231, 231)";
+    }
 
-        console.log(this.state.movies);
+    handleClick = (number) => {
+
+        if(this.state.sections === number)
+            return;
+        else {
+            
+            if(number === 1) {
+                this.setState({sections: number});
+                request('movie/upcoming')
+                .then(data => this.setState({movies: data.results}))
+            }
+            else if(number === 2) {
+                this.setState({sections: number});
+                request('movie/now_playing')
+                .then(data => this.setState({movies: data.results}))
+            }
+            else if(number === 3) {
+                this.setState({sections: number});
+                request('movie/top_rated')
+                .then(data => this.setState({movies: data.results}))
+            }
+            
+        }
+    }
+
+    render() {
+        console.log(this.state.sections);
 
         return(
             <div className = {Styles.Container}>
+                <div className = {Styles.Choices}>
+                    <h1 style = {{color: this.checkWhichSection(1)}} onClick = {() => this.handleClick(1)}>Nadchodzące</h1>
+                    <h1 style = {{color: this.checkWhichSection(2)}} onClick = {() => this.handleClick(2)}>Najnowsze</h1>
+                    <h1 style = {{color: this.checkWhichSection(3)}} onClick = {() => this.handleClick(3)}>Najlepiej oceniane</h1>
+                </div>
+            
+                <div className = {Styles.Items}>
                 {
                     this.state.movies.splice(0,10).map((item) => (
                         <PartList title = {item.title} poster_path = {item.poster_path} id = {item.id}/>
                     ))
                 }
+                </div>
             </div>
         )
     }
