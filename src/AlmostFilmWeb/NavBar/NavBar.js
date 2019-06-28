@@ -21,8 +21,8 @@ class NavBar extends React.Component {
                 
                 <div className = {Styles.options}>
                     <NavLink to ="/Nowosci" className = {Styles.Buttons} >Nowości</NavLink>
-                    <div className = {Styles.Buttons}>Baza Filmów</div>
                     <NavLink to = "/Search" className = {Styles.Buttons}>Search</NavLink>
+                    <NavLink to = "/LogIn" className = {Styles.Buttons}>Zaloguj</NavLink>
                 </div>
             </div>
         )

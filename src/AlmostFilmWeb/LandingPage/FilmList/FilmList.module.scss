@@ -19,47 +19,79 @@
 
     }
 
-    .Items {
-        animation-name: intro;
-        animation-duration: 2s;
-        transform: translate(0, 20px);
-        opacity:0px;
-        width:100%;
-        height: 300px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+    .ContainerWithArrows {
         
-        @keyframes intro {
-            0% {
-                transform: translate(0, 0); opacity: 0;;    
-              }
-              100% {
-                transform: translate(0, 20); opacity: 100;
-              }           
+        display: flex;
+        align-items: center;
+        height: 300px;
+
+        .RightArrow {
+            height: 32px;
+            margin:30px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .LeftArrow {
+            height: 32px;
+            margin:30px;
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        
+        .ItemsContainer {
+        
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            
+            .Items {
+                position: absolute;
+                left: 0;
+                width:200%;
+                height: 300px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                
+    
+                &:hover {
+                    transition: 3s ease-in-out;
+                    left: -100%;
+                }
+    
+            }
+        }
+        
+            
+        .Item {
+            background-size: 105%;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 200px;
+            height: 250px;
+            margin: 0 3px 0 3px;
+            transition: 0.5s;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            margin:5px;
+    
+            &:hover {
+                cursor: pointer;
+                background-size: 130%;
+                box-shadow: 2px 2px 2px black;
+            }   
         }
     }
-        
-    .Item {
-        background-size: 105%;
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 200px;
-        height: 250px;
-        margin: 0 3px 0 3px;
-        overflow: hidden;
-        transition: 0.5s;
-        border: 1px solid transparent;
-        border-radius: 3px;
-        margin:5px;
 
-        &:hover {
-            cursor: pointer;
-            background-size: 130%;
-            box-shadow: 2px 2px 2px black;
-        }   
-    }
+    
 }
 
 

@@ -6,6 +6,7 @@ import NavBar from './NavBar/NavBar.js';
 import Footer from './Footer/Footer.js'
 import Search from './Search/Search.js'
 import Details from './MovieDetails/MovieDetails.js'
+import Login from '../AlmostFilmWeb/Login/Login'
 
 const AlmostFilmWeb = (props) =>
 <div>
@@ -16,6 +17,7 @@ const AlmostFilmWeb = (props) =>
         <Route exact path ="/" component={LandingPage} />
         <Route exact path = "/Search" component = {Search} />
         <Route path = "/movies/:id" component = {Details} />
+        <Route exact path = "/LogIn" component = {Login} /> 
       </Switch>
       <Footer />
   </Router>
