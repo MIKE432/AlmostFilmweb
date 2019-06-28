@@ -27,6 +27,7 @@ class FilmList extends React.Component {
             sections: 1,
             positionLeft : 0,
         }
+        this.myRef = React.createRef()
     }
 
     componentDidMount() {
@@ -44,7 +45,7 @@ class FilmList extends React.Component {
     clickRight = () => {
         if(this.left > -2500) {
             this.left -= 500;
-            document.getElementById('testid').style.left = this.left +'px';
+            this.myRef.current.style.left = this.left +'px';
         }
         
     }
@@ -52,7 +53,7 @@ class FilmList extends React.Component {
     clickLeft = () => {
         if(this.left < 0) {
             this.left += 500;
-            document.getElementById('testid').style.left = this.left +'px';    
+            this.myRef.current.style.left = this.left +'px';    
         }
     }
 
@@ -95,7 +96,7 @@ class FilmList extends React.Component {
                     <img src = {leftArrow} className = {Styles.LeftArrow}  onClick = {this.clickLeft}/>
                     <div className = {Styles.ItemsContainer} >
                         
-                        <div className = {Styles.Items} id="testid" style={{left:-this.state.whichPart + 'px'}}>
+                        <div className = {Styles.Items} ref = {this.myRef} style={{left:-this.state.whichPart + 'px'}}>
                         {
                             this.state.movies.map((item) => (
                                 <PartList title = {item.title} poster_path = {item.poster_path} id = {item.id}/>
