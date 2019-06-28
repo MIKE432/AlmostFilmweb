@@ -1,0 +1,17 @@
+@import '../../DefConsts.scss';
+
+.Container {
+    width:100%;
+    height: 100vh;
+    background-color: var(--background-main-color);
+
+    .Inputs {
+        display: flex;
+        flex-direction: column;
+        width:250px;
+
+        input {
+            text-align: center;
+        }
+    }
+}

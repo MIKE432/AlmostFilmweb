@@ -17,7 +17,6 @@ class LandingPage extends React.Component {
             <div>
                 <div className = {Styles.LandingPage} > 
                     <Header />
-                
                 </div>
                 <FilmList />
             </div>

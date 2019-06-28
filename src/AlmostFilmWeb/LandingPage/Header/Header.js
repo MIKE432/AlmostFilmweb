@@ -15,11 +15,7 @@ class Header extends React.Component {
 
     render() {
         return(
-            
-            <div className = {Styles.header}>
-                <h1 className = {Styles.welcome} >Welcome to</h1>
-                <h2 className = {Styles.title}>Almost Filmweb</h2>   
-            </div>
+            null
         )
     }
 }

@@ -16,6 +16,7 @@ class FilmList extends React.Component {
     constructor() {
         super();
 
+        this.left = 0;
         this.state = {
             movies: [],
             upcoming: [],
@@ -24,6 +25,7 @@ class FilmList extends React.Component {
 
             whichPart: 1,
             sections: 1,
+            positionLeft : 0,
         }
     }
 
@@ -40,12 +42,17 @@ class FilmList extends React.Component {
     }
 
     clickRight = () => {
-        this.setState({whichPart: this.state.whichPart + 1})
+        if(this.left > -2500) {
+            this.left -= 500;
+            document.getElementById('testid').style.left = this.left +'px';
+        }
+        
     }
 
     clickLeft = () => {
-        if(this.state.whichPart > 1) {
-            this.setState({whichPart: this.state.whichPart - 1})
+        if(this.left < 0) {
+            this.left += 500;
+            document.getElementById('testid').style.left = this.left +'px';    
         }
     }
 
@@ -86,9 +93,9 @@ class FilmList extends React.Component {
 
                 <div className = {Styles.ContainerWithArrows}>
                     <img src = {leftArrow} className = {Styles.LeftArrow}  onClick = {this.clickLeft}/>
-                    <div className = {Styles.ItemsContainer}>
+                    <div className = {Styles.ItemsContainer} >
                         
-                        <div className = {Styles.Items}>
+                        <div className = {Styles.Items} id="testid" style={{left:-this.state.whichPart + 'px'}}>
                         {
                             this.state.movies.map((item) => (
                                 <PartList title = {item.title} poster_path = {item.poster_path} id = {item.id}/>
@@ -96,13 +103,11 @@ class FilmList extends React.Component {
                         }
                         </div>
                     </div>
-                    <img src = {rightArrow} className = {Styles.RightArrow}  onClick = {this.handleArrowClick}/>
+                    <img src = {rightArrow} className = {Styles.RightArrow}  onClick = {this.clickRight}/>
                 </div>
             </div>
         )
     }
-
-    // for(int i = this.state.counter; i < counter*liczba; i++) ale wcześniej trzeba zrobić metode która wyznacza subArray
 }
 
 export default FilmList;
