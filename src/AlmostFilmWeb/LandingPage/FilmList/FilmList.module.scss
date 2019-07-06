@@ -31,15 +31,16 @@
 
             &:hover {
                 cursor: pointer;
+                transform: scale(1.2);
             }
         }
 
         .LeftArrow {
             height: 32px;
             margin:30px;
-            
             &:hover {
                 cursor: pointer;
+                transform: scale(1.2);
             }
         }
         

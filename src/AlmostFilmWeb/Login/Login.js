@@ -1,5 +1,6 @@
 import React from 'react'
 import Styles from './Login.module.scss';
+import LoginInput from './LoginInputs/LoginInputs'
 
 export default class Login extends React.Component {
     state = {
@@ -12,8 +13,8 @@ export default class Login extends React.Component {
             <div className = {Styles.Container}>
                 <div className = {Styles.Inputs}>
                     <h1>Zaloguj</h1>
-                    <input placeholder = "Nick" />
-                    <input type = "password" placeholder = "hasło" minlength="6" />
+                    <LoginInput label = "Nick" name = "Nick" type = 'trxt'/>
+                    <LoginInput label = "Password" type = 'password' />
                     <button>Zaloguj</button>
                 </div>
             </div>

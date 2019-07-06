@@ -1,0 +1,44 @@
+.Container {
+    position: relative;
+    border: 1px solid transparent;
+
+    label {
+        border: 1px solid transparent;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-size: 15px;
+        color: black;
+        pointer-events: none;
+        transition: .5s ease-in-out;
+        background-color: white;
+        
+
+
+    }
+
+    .LabelOnFocus {
+        top: -5px;
+        font-size: 12px;
+    }
+ 
+    input {
+        border: 1px solid transparent;
+        padding: 0 0 0 7px;
+        width: 250px;
+        text-align: left;
+        height: 30px;
+        color: var(--content-text-color);
+        border-radius: 5px;
+        margin:3px;
+        outline: none;
+ 
+
+
+    }
+        
+    .InputOnFocus {
+        border-color: black;
+    }
+
+}
