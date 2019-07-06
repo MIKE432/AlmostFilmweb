@@ -1,5 +1,8 @@
 import React from 'react';
 import Styles from './Register.module.scss';
+import LoginInput from '../Login/LoginInputs/LoginInputs'
+
+
 
 class Register extends React.Component {
     constructor(props) {
@@ -13,11 +16,12 @@ class Register extends React.Component {
     render() {
         return(
             <div className = {Styles.Container}>
-                <div className = {Styles.Inputs} >
-                    <input></input>
-                    <input></input>
-                    <input></input>
-                    <input type = "password"></input>
+                <div className = {Styles.Inputs}>
+                    <h1>Almost FilmWeb</h1>
+                    <LoginInput label = "e-mail" name = "Nick" type = 'text'/>
+                    <LoginInput label = "Nick" name = "Nick" type = 'text'/>
+                    <LoginInput label = "Password" type = 'password' />
+                    <button>Zarejestruj</button>
                 </div>
             </div>
         )

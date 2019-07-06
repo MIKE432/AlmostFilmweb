@@ -4,14 +4,42 @@
     width:100%;
     height: 100vh;
     background-color: var(--background-main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 
     .Inputs {
         display: flex;
         flex-direction: column;
-        width:250px;
+        width:500px;
+        height: 500px;
+        align-items: center;
+
+        h1 {
+            margin: 30px;
+            font-size: 50px;
+        }
 
         input {
-            text-align: center;
+            text-align: left;
+        }
+
+        button {
+            width: 250px;
+            border: none;
+            color: var(--content-text-color);
+            background-color: var(--content-background-color);
+            border-radius: 5px;
+            margin:3px;
+            border: 1px solid grey;
+            outline: none;
+     
+            &:hover {
+                color: var(--hover-color);
+                background-color: var(--content-hover-color);
+                box-shadow: 1px 1px 1px black;
+            }
         }
     }
 }
