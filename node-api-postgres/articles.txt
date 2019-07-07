@@ -1,0 +1,5 @@
+łączenie backendu u frontendu
+https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/
+
+stawianie postgresu i rozpoczynanie api
+https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
