@@ -3,3 +3,20 @@ https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend
 
 stawianie postgresu i rozpoczynanie api
 https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
+
+linki z ktorych skorzystałem przy tworzeniu medody POST:
+https://github.com/github/fetch/issues/323
+
+// najwazniejszy bo tłumaczy ze trzeba po stronie backendu dodac w headerze content-type
+https://stackoverflow.com/questions/47889868/empty-request-body 
+https://stackoverflow.com/questions/50606001/cant-get-request-payload-in-express-js-node
+
+// dokumentacja
+https://github.com/expressjs/body-parser#bodyparserjsonoptions 
+
+// wstęp do fetcha
+https://medium.com/@avanthikameenakshi/crud-react-express-99025f03f06e 
+https://stackoverflow.com/questions/4295782/how-to-process-post-data-in-node-js
+
+SQL syntax:
+https://www.w3schools.com/sql/sql_insert.asp
