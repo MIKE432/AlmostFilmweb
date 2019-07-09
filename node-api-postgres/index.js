@@ -2,11 +2,10 @@ const express = require('express')
 var bodyParser = require('body-parser')
 const app = express()
 const port = 9000
-const db = require('./queries')
+const db = require('./queries/userQueries')
 
 var cors = require("cors")
 
-//app.use(bodyParser.text()) problem znajduje sie w odczytywaniu bo przesył jest okej;
 app.use(bodyParser.json('type'))
 app.use(
     bodyParser.urlencoded({

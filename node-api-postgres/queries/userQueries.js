@@ -9,9 +9,9 @@ const pool = new Pool({
 
 const createUser = (req, res, next) => {
   
-    const { email, name, password } =  req.body;      
-
-    console.log(req.body);
+    const { email, name, password } =  req.body;
+    console.log(email);
+    //console.log(req.body);
     pool.query('INSERT INTO users (email, name, password) VALUES ($1, $2, $3)', [email, name, password], (error, results) => {
         if(error) {
             throw error;
