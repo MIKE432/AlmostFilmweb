@@ -1,3 +1,4 @@
+
 const Pool = require('pg').Pool
 const pool = new Pool({
     user: 'mike',
@@ -11,14 +12,12 @@ const createUser = (req, res, next) => {
   
     const { email, name, password } =  req.body;
     console.log(email);
-    //console.log(req.body);
     pool.query('INSERT INTO users (email, name, password) VALUES ($1, $2, $3)', [email, name, password], (error, results) => {
         if(error) {
             throw error;
         }
 
         res.status(201).send(req.body)
-        res.end(req.body);
     } )
 }
 
@@ -46,7 +45,7 @@ const deleteUser = (request, response) => {
 const getUserById = (request, response) => {
   const id = parseInt(request.params.id)
 
-  pool.query('SELECT * FROM users WHERE id = $1', [id], (error, results) => {
+  pool.query('SELECT * FROM users WHERE userid = $1', [id], (error, results) => {
     if (error) {
       throw error
     }
@@ -55,9 +54,21 @@ const getUserById = (request, response) => {
   })
 }
 
+const getUserByName = (req, res) => {
+
+  pool.query('SELECT * FROM users WHERE name = $1', [req.params.name], (error, results) => {
+    if (error) {
+      throw error
+    }
+    
+    res.status(200).json(results.rows)
+  })
+}
+
 module.exports = {
     createUser,
     deleteUser,
     getUsers,
     getUserById,
+    getUserByName
 }

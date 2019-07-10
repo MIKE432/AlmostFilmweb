@@ -2,7 +2,8 @@ const express = require('express')
 var bodyParser = require('body-parser')
 const app = express()
 const port = 9000
-const db = require('./queries/userQueries')
+const db = require('./queries/userRouter/userQueries')
+const router = require('./queries/userRouter/router')
 
 var cors = require("cors")
 
@@ -23,13 +24,10 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.post('/users', db.createUser)
-app.delete('/users/:id', db.deleteUser)
-app.get('/users', db.getUsers)
-app.get('/users/:id', db.getUserById)
+router.router(app, db);
+
 
 app.get('/', (request, response) => {
-    //response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     response.json({ info: 'Node.js, Express, and Postgres API' })
 })
 
