@@ -16,16 +16,18 @@ export default class Login extends React.Component {
         fetch(`http://localhost:9000/users/name=${this.nameRef.current.refInput.current.value}`)
         .then(data => data.json())
         .then(data => {
-            console.log(data[0].password)
+            
+            console.log()
+            
             if(data[0].password === this.passwordRef.current.refInput.current.value) {
-                console.log("access allowed")
+                console.log("lel")
+                this.nameRef.current.onAcceptInput()
+                this.passwordRef.current.onAcceptInput()
             }
-            else {
-                console.log("access denied")
-            }
+            else { this.passwordRef.current.onError() }
         })
         .catch(
-            error => console.log("wrong nick")
+            error => { this.nameRef.current.onError() } 
         )
 
     }

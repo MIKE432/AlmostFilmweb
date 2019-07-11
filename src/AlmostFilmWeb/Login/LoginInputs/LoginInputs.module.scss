@@ -14,14 +14,19 @@
         pointer-events: none;
         transition: .5s ease-in-out;
         background-color: var(--content-background-color);
-        
-
-
     }
 
     .LabelOnFocus {
         top: -5px;
         font-size: 12px;
+    }
+
+    .onErrorInput {
+        border-color: red;
+    }
+
+    .onAcceptInput {
+        border-color: green;
     }
  
     input {
@@ -41,3 +46,20 @@
     }
 
 }
+
+.onError {
+    animation-name: onErrorContainer;
+    animation-duration: .5s;
+
+
+    @keyframes onErrorContainer {
+        0% {left:0}
+        20%{left:5px}
+        40%{left:-5px}
+        60%{left:5px}
+        85%{left:-5px}
+        100%{left:0}
+    }
+}
+
+
