@@ -1,3 +1,5 @@
+@import '../../../DefConsts.scss';
+
 .Container {
     position: relative;
     border: 1px solid transparent;
@@ -11,7 +13,7 @@
         color: black;
         pointer-events: none;
         transition: .5s ease-in-out;
-        background-color: white;
+        background-color: var(--content-background-color);
         
 
 
@@ -23,18 +25,15 @@
     }
  
     input {
-        border: 1px solid transparent;
+        border: 2px solid white;
         padding: 0 0 0 7px;
         width: 250px;
         text-align: left;
         height: 30px;
-        color: var(--content-text-color);
+        background-color: var(--content-background-color);
         border-radius: 5px;
         margin:3px;
         outline: none;
- 
-
-
     }
         
     .InputOnFocus {
