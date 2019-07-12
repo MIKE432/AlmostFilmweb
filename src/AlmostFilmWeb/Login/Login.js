@@ -1,6 +1,8 @@
 import React from 'react'
-import Styles from './Login.module.scss';
+import Styles from './Login.module.scss'
 import LoginInput from './LoginInputs/LoginInputs'
+import { store } from '../../index'
+import { userLogIn } from '../statemanage/actions/loginActions'
 
 export default class Login extends React.Component {
 
@@ -8,6 +10,7 @@ export default class Login extends React.Component {
         super();
         this.nameRef = React.createRef();
         this.passwordRef = React.createRef();
+        store.subscribe(() => console.log(store.getState()))
     }
 
     handleClick = (e) => {
@@ -16,20 +19,15 @@ export default class Login extends React.Component {
         fetch(`http://localhost:9000/users/name=${this.nameRef.current.refInput.current.value}`)
         .then(data => data.json())
         .then(data => {
-            
-            console.log()
-            
+                
             if(data[0].password === this.passwordRef.current.refInput.current.value) {
-                console.log("lel")
-                this.nameRef.current.onAcceptInput()
-                this.passwordRef.current.onAcceptInput()
+                store.dispatch(userLogIn(data[0]))
             }
             else { this.passwordRef.current.onError() }
         })
         .catch(
             error => { this.nameRef.current.onError() } 
         )
-
     }
 
     render() {

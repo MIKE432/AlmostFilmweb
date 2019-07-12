@@ -2,6 +2,9 @@ import React from 'react';
 import Styles from './NavBar.module.scss';
 import { NavLink } from 'react-router-dom';
 import Login from '../Login/Login'
+import { store } from '../../index'
+
+
 
 
 class NavBar extends React.Component {
@@ -11,6 +14,9 @@ class NavBar extends React.Component {
         this.state = {
             isLogin: false,
         }
+
+        
+
     }
 
     handleLoginClick = () => {
