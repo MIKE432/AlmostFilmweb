@@ -10,7 +10,7 @@ export default class Login extends React.Component {
         super();
         this.nameRef = React.createRef();
         this.passwordRef = React.createRef();
-        store.subscribe(() => console.log(store.getState()))
+        
     }
 
     handleClick = (e) => {
@@ -29,6 +29,8 @@ export default class Login extends React.Component {
             error => { this.nameRef.current.onError() } 
         )
     }
+
+
 
     render() {
         return(

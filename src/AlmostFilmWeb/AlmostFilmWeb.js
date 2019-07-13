@@ -18,8 +18,10 @@ const AlmostFilmWeb = (props) =>
         <Route exact path ="/" component={LandingPage} />
         <Route exact path = "/Search" component = {Search} />
         <Route path = "/movies/:id" component = {Details} />
-        <Route exact path = "/Register" component = {Register} /> \
+        <Route exact path = "/Register" component = {Register} />
+        <Route exact path = "/user" component = {Search} />
         <Route path='*' exact={true} component={WrongRoute} />
+
       </Switch>
       <Footer />
   </Router>

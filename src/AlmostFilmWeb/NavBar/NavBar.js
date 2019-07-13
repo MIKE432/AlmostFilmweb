@@ -13,9 +13,10 @@ class NavBar extends React.Component {
 
         this.state = {
             isLogin: false,
+            isLogged: false
         }
 
-        
+        store.subscribe(this.handleLogin)
 
     }
 
@@ -23,8 +24,12 @@ class NavBar extends React.Component {
         this.setState({isLogin: !this.state.isLogin})
     }
 
+    handleLogin = () => {
+        this.setState({isLogin: true, isLogged: true})
+    }
+
     render() {
-        const { isLogin } = this.state;
+        const { isLogin, isLogged } = this.state;
         return(
             <div className={Styles.NavBar}>
                 <div className = {Styles.logo}>
@@ -34,11 +39,15 @@ class NavBar extends React.Component {
                 <div className = {Styles.options}>
                     <NavLink to ="/Nowosci" className = {Styles.Buttons} >Nowości</NavLink>
                     <NavLink to = "/Search" className = {Styles.Buttons}>Search</NavLink>
-                    <div className = {Styles.Buttons} onClick = {this.handleLoginClick}>Zaloguj</div>
                     {
-                        isLogin ? (<Login />) : (null)
+                        !isLogged ? (<div className = {Styles.Buttons} onClick = {this.handleLoginClick}>Zaloguj</div>) : (<NavLink to = "/user" className = {Styles.Buttons}>Profil</NavLink>)
                     }
-                    <NavLink to = "/Register" className = {Styles.Buttons}>Zarejestruj się</NavLink>
+                    {
+                        (isLogin && !isLogged) ? (<Login />) : (null)
+                    }
+                    {
+                        !isLogged ? (<NavLink to = "/Register" className = {Styles.Buttons}>Zarejestruj się</NavLink>) : (null)
+                    }
                 </div>
             </div>
         )
