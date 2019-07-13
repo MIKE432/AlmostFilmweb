@@ -13,9 +13,8 @@ class NavBar extends React.Component {
 
         this.state = {
             isLogin: false,
-            isLogged: false
+            isLogged: store.getState().userLogin.logged
         }
-
         store.subscribe(this.handleLogin)
 
     }

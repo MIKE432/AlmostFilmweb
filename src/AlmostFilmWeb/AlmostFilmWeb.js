@@ -8,6 +8,7 @@ import Search from './Search/Search.js'
 import Details from './MovieDetails/MovieDetails.js'
 import Register from '../AlmostFilmWeb/Register/Register.js'
 import { WrongRoute } from '../AlmostFilmWeb/404Component/404Component'
+import UserProfile from '../AlmostFilmWeb/userProfile/userProfile'
 
 const AlmostFilmWeb = (props) =>
 <div>
@@ -19,7 +20,7 @@ const AlmostFilmWeb = (props) =>
         <Route exact path = "/Search" component = {Search} />
         <Route path = "/movies/:id" component = {Details} />
         <Route exact path = "/Register" component = {Register} />
-        <Route exact path = "/user" component = {Search} />
+        <Route exact path = "/user" component = {UserProfile} />
         <Route path='*' exact={true} component={WrongRoute} />
 
       </Switch>

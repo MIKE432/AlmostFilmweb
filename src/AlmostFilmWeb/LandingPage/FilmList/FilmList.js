@@ -82,7 +82,6 @@ class FilmList extends React.Component {
     }
 
     render() {
-        console.log(this.state.sections);
 
         return(
             <div className = {Styles.Container}>
